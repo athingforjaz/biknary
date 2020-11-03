@@ -13,5 +13,5 @@ final_pattern = my_pattern.pattern_maker pattern_width
 # these are commented out, we can do this to show a lettered pattern in the terminal
 #final_pattern = final_pattern.join(' ')
 #print final_pattern
-set resizable: true
+set resizable: true, height: 1000, title: "Biknary 3000"
 show

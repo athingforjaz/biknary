@@ -15,10 +15,13 @@ To run:
 - Toggle between art mode and knitting mode
 - Allow for customisable colors in art mode
 - Add GUI interface to allow input from GUI
-- Make every 10 rows a different color
 - Add row numbers
+- Row numbers need to start at the bottom and go up
+- Row coloring needs to start at bottom and go up
+- refactor to take out repeated code
 
 # Current Features
 - Generates a rectangular knitting pattern based on user input
 - Translates binary into knits and purls
 - Displays a colored square for each stitch
+- Make every 10 rows a different color

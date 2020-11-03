@@ -20,6 +20,7 @@ def pattern_maker pattern_width
     final_pattern = []
     x = 0
     y = 0 
+    square_size = 20
     #this takes @pattern_length from above and repeats our pattern until it is even (no odd length rows at the end)
     while count < @pattern_length    
         #step through each character in the binary string
@@ -27,53 +28,55 @@ def pattern_maker pattern_width
             #this is our row-maker, reset x when we get to the end of the row and increment y
             if count % pattern_width == 0
                 x = 0
-                y += 10
-                if y % 100 == 0
-                    square_color = 'white'
-                else
-                    square_color = 'yellow'
-                end
+                y += square_size
+                
                 final_pattern << "\n"
+            end
+            ten_rows = 10*square_size
+            if y % ten_rows == 0
+                square_color = 'yellow'
+            else
+                square_color = 'white'
             end
             case pattern
             when "0"
                 final_pattern << "K"
                 Square.new(
-                    size: 10,
+                    size: square_size,
                     x: x,
                     y: y,
                     color: 'black'
                 )  
                 Square.new(
-                    size: 9,
+                    size: square_size-1,
                     x: x+1,
                     y: y+1,
                     color: square_color
                 )
-                x += 10
+                x += square_size
             when "1"
                 final_pattern << "P"
                 Square.new(
-                    size: 10,
+                    size: square_size,
                     x: x,
                     y: y,
                     color: 'black'
                 )
                 Square.new(
-                    size: 9,
+                    size: square_size-1,
                     x: x+1,
                     y: y+1,
                     color: square_color
                 )
                 Circle.new(
-                    x: x+5, 
-                    y: y+5,
+                    x: x+(square_size/2), 
+                    y: y+(square_size/2),
                     radius: 2,
                     sector: 4,
                     color: 'black',
                     z:2
                 )  
-                x += 10
+                x += square_size
             end
         count += 1 
         end
