@@ -34,8 +34,14 @@ def pattern_maker pattern_width
                     size: 10,
                     x: x,
                     y: y,
-                    color: 'purple'
+                    color: 'black'
                 )  
+                Square.new(
+                    size: 9,
+                    x: x+1,
+                    y: y+1,
+                    color: 'white'
+                )
                 x += 10
             when "1"
                 final_pattern << "P"
@@ -43,7 +49,21 @@ def pattern_maker pattern_width
                     size: 10,
                     x: x,
                     y: y,
-                    color: 'yellow'
+                    color: 'black'
+                )
+                Square.new(
+                    size: 9,
+                    x: x+1,
+                    y: y+1,
+                    color: 'white'
+                )
+                Circle.new(
+                    x: x+5, 
+                    y: y+5,
+                    radius: 2,
+                    sector: 4,
+                    color: 'black',
+                    z:2
                 )  
                 x += 10
             end
