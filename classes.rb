@@ -1,3 +1,5 @@
+require 'ruby2d' 
+
 class KnittingRandomizer
 
 def binary_time project_pattern
@@ -15,16 +17,34 @@ end
 def pattern_maker pattern_width
     count = 0
     final_pattern = []
-    while count < @pattern_length       
+    x = 0
+    y = 0 
+    while count < @pattern_length    
         @binary_pattern.each_char do |pattern|
             if count % pattern_width == 0
+                x = 0
+                y += 10
                 final_pattern << "\n"
             end
             case pattern
             when "0"
                 final_pattern << "K"
+                Square.new(
+                    size: 10,
+                    x: x,
+                    y: y,
+                    color: 'purple'
+                )  
+                x += 10
             when "1"
                 final_pattern << "P"
+                Square.new(
+                    size: 10,
+                    x: x,
+                    y: y,
+                    color: 'yellow'
+                )  
+                x += 10
             end
         count += 1 
         end
