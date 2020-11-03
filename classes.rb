@@ -4,6 +4,7 @@ class KnittingRandomizer
 
 def binary_time project_pattern
     @binary_pattern = project_pattern.unpack("B*")[0]
+    @binary_pattern.reverse!
 end
 
 def find_length pattern_width
@@ -19,12 +20,19 @@ def pattern_maker pattern_width
     final_pattern = []
     x = 0
     y = 0 
-    
+    #this takes @pattern_length from above and repeats our pattern until it is even (no odd length rows at the end)
     while count < @pattern_length    
+        #step through each character in the binary string
         @binary_pattern.each_char do |pattern|
+            #this is our row-maker, reset x when we get to the end of the row and increment y
             if count % pattern_width == 0
                 x = 0
                 y += 10
+                if y % 100 == 0
+                    square_color = 'white'
+                else
+                    square_color = 'yellow'
+                end
                 final_pattern << "\n"
             end
             case pattern
@@ -40,7 +48,7 @@ def pattern_maker pattern_width
                     size: 9,
                     x: x+1,
                     y: y+1,
-                    color: 'white'
+                    color: square_color
                 )
                 x += 10
             when "1"
@@ -55,7 +63,7 @@ def pattern_maker pattern_width
                     size: 9,
                     x: x+1,
                     y: y+1,
-                    color: 'white'
+                    color: square_color
                 )
                 Circle.new(
                     x: x+5, 

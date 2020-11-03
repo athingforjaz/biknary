@@ -15,6 +15,8 @@ To run:
 - Toggle between art mode and knitting mode
 - Allow for customisable colors in art mode
 - Add GUI interface to allow input from GUI
+- Make every 10 rows a different color
+- Add row numbers
 
 # Current Features
 - Generates a rectangular knitting pattern based on user input
