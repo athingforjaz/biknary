@@ -12,6 +12,9 @@ To run:
 - Add yarn-over and decrease capabilities
 - Add random cable generator
 - Add triangles & other shapes for different types of knitting patterns, such as shawls
+- Toggle between art mode and knitting mode
+- Allow for customisable colors in art mode
+- Add GUI interface to allow input from GUI
 
 # Current Features
 - Generates a rectangular knitting pattern based on user input

@@ -13,4 +13,5 @@ final_pattern = my_pattern.pattern_maker pattern_width
 
 final_pattern = final_pattern.join(' ')
 print final_pattern
+set resizable: true
 show

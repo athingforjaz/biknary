@@ -19,6 +19,7 @@ def pattern_maker pattern_width
     final_pattern = []
     x = 0
     y = 0 
+    
     while count < @pattern_length    
         @binary_pattern.each_char do |pattern|
             if count % pattern_width == 0
